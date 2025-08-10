@@ -1,0 +1,85 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/home_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/home_top_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_gravity="top"
+        android:background="@drawable/overlay_top_gradient" />
+
+    <TextView
+        android:id="@+id/home_LBL_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RunFlow"
+        android:textStyle="bold|italic"
+        android:textColor="#111827"
+        android:textSize="28sp"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_gravity="top|center_horizontal"
+        android:elevation="8dp" />
+
+    <View
+        android:id="@+id/home_bottom_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/overlay_bottom_gradient" />
+
+    <LinearLayout
+        android:id="@+id/home_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="28dp"
+        android:clipToPadding="false"
+        android:elevation="12dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_BTN_run"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="Start"
+            android:textStyle="italic|bold"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="75dp"
+            android:elevation="8dp"
+            android:translationZ="8dp"
+            app:rippleColor="#40FFFFFF"
+            android:backgroundTint="#0D47A1" />
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="14dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_BTN_set_goal"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:text="Set a goal"
+            android:textColor="#212121"
+            app:cornerRadius="24dp"
+            android:elevation="2dp"
+            app:rippleColor="#20000000"
+            android:backgroundTint="#EAEAEA" />
+    </LinearLayout>
+
+</FrameLayout>

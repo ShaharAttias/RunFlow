@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "847867669504",
+    "firebase_url": "https://runflow-82deb-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "runflow-82deb",
+    "storage_bucket": "runflow-82deb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847867669504:android:f2b89c08004ff1e3133ce5",
+        "android_client_info": {
+          "package_name": "com.example.runflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847867669504-l0a6ghcrpgjhtpq22e8mh382vatcuroq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.runflow",
+            "certificate_hash": "9e92cdd42ce4c2b6f49775c559b3f3e270ac3933"
+          }
+        },
+        {
+          "client_id": "847867669504-hpb92omjotu92p3evquqa5qgu8sahvgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZEwYAzAFqazOm6Z2ERB150IyqvPw3f-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847867669504-hpb92omjotu92p3evquqa5qgu8sahvgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

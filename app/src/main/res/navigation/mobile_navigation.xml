@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <!-- Home -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.runflow.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_navigation_home_to_runFragment"
+            app:destination="@id/runFragment" />
+    </fragment>
+
+    <!-- מסך מפה להצגת מסלול ריצה -->
+    <fragment
+        android:id="@+id/runMapFragment"
+        android:name="com.example.runflow.ui.run.RunMapFragment"
+        android:label="Route"
+        tools:layout="@layout/fragment_run_map">
+
+        <!-- מעבירים מערכים של קואורדינטות -->
+        <argument
+            android:name="lats"
+            app:argType="float[]" />
+        <argument
+            android:name="lngs"
+            app:argType="float[]" />
+
+    </fragment>
+
+
+    <!-- Plans -->
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.runflow.ui.plans.PlansFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_plans">
+        <action
+            android:id="@+id/action_plansFragment_to_planDetailsFragment"
+            app:destination="@id/planDetailsFragment" />
+    </fragment>
+
+    <!-- Profile -->
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.runflow.ui.profile.ProfileFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_profile">
+        <!-- המשך תוכנית → PlanProgressFragment -->
+        <action
+            android:id="@+id/action_profileFragment_to_planProgressFragment"
+            app:destination="@id/planProgressFragment" />
+    </fragment>
+
+    <!-- Run -->
+    <fragment
+        android:id="@+id/runFragment"
+        android:name="com.example.runflow.ui.run.RunFragment"
+        android:label="Run"
+        tools:layout="@layout/fragment_run">
+
+        <!-- מעבר למסך סיכום ריצה -->
+        <action
+            android:id="@+id/action_runFragment_to_runSummaryFragment"
+            app:destination="@id/runSummaryFragment" />
+
+        <!-- ארגומנטים להפעלה מתוך תכנית -->
+        <argument android:name="fromPlan" app:argType="boolean" android:defaultValue="false" />
+        <argument android:name="planId" app:argType="string" android:defaultValue="" />
+        <argument android:name="week" app:argType="integer" android:defaultValue="0" />
+        <argument android:name="index" app:argType="integer" android:defaultValue="0" />
+        <argument android:name="targetType" app:argType="string" android:defaultValue="" />
+        <argument android:name="targetValue" app:argType="float" android:defaultValue="0" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/runSummaryFragment"
+        android:name="com.example.runflow.ui.run.RunSummaryFragment"
+        android:label="Run Summary"
+        tools:layout="@layout/fragment_run_summary">
+        <argument android:name="durationMillis" app:argType="long" />
+        <argument android:name="distanceKm" app:argType="float" />
+        <argument
+            android:name="pathPoints"
+            app:argType="com.google.android.gms.maps.model.LatLng[]"
+            app:nullable="false" />
+
+        <!-- כדי לדעת אם לסמן וי אוטומטי אחרי שמירה -->
+        <argument android:name="fromPlan" app:argType="boolean" android:defaultValue="false" />
+        <argument android:name="planId" app:argType="string" android:defaultValue="" />
+        <argument android:name="week" app:argType="integer" android:defaultValue="0" />
+        <argument android:name="index" app:argType="integer" android:defaultValue="0" />
+    </fragment>
+
+    <!-- פרטי תוכנית -->
+    <fragment
+        android:id="@+id/planDetailsFragment"
+        android:name="com.example.runflow.ui.plans.PlanDetailsFragment"
+        android:label="Plan Details"
+        tools:layout="@layout/fragment_plan_details">
+        <argument android:name="title" app:argType="string" />
+        <argument android:name="description" app:argType="string" />
+        <argument android:name="difficulty" app:argType="string" />
+        <argument android:name="imageRes" app:argType="integer" />
+        <argument android:name="weeks" app:argType="string[]" />
+    </fragment>
+
+    <!-- מסך התקדמות תוכנית (שבועות/אימונים באותו פרגמנט) -->
+    <fragment
+        android:id="@+id/planProgressFragment"
+        android:name="com.example.runflow.ui.plans.PlanProgressFragment"
+        android:label="Plan Progress"
+        tools:layout="@layout/fragment_plan_progress">
+
+        <!-- התחלת ריצה מתוך אימון -->
+        <action
+            android:id="@+id/action_planProgressFragment_to_runFragment"
+            app:destination="@id/runFragment" />
+    </fragment>
+</navigation>

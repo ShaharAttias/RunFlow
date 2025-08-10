@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RunFlow</string>
+    <string name="title_activity_running">RunningActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="plans">Plans</string>
+    <string name="profile">Profile</string>
+    <string name="run_tracker">Run Tracker</string>
+    <string name="run">Run</string>
+    <string name="plan_weeks_title">Program Weeks</string>
+    <string name="back_to_weeks">Back to weeks</string>
+    <string name="plan_weeks_list">List of program weeks</string>
+
+
+</resources>
